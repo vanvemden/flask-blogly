@@ -37,8 +37,6 @@ def save_user():
 
     return redirect('/')
 
-    # return render_template('add-user.jinja', user={})
-
 
 @app.route('/user/<int:id>')
 def show_user_details(id):
