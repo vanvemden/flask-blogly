@@ -1,0 +1,21 @@
+{% extends 'base.jinja' %}
+
+{% block page_title %}Edit Post{% endblock %}
+
+{% block title %}Edit Post for {{ post.user.first_name }} {{ post.user.last_name }}{% endblock %}
+
+{% block content %}
+<form action="/edit-post/{{ post.id }}" method="POST">
+  <label>Title
+    <input type="text" name="title" required value="{{ post.title }}">
+  </label>
+  <br>
+  <label>Content
+    <textarea type="text" name="content" rows="4" cols="50" required>
+    {{ post.content }}
+    </textarea>
+  </label>
+  <a href="/post/{{ post.id }}" class="btn btn-primary">Cancel</a>
+  <button class="btn btn-success">Edit</button>
+</form>
+{% endblock %}

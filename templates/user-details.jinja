@@ -13,4 +13,18 @@
   <a class="btn btn-primary" href="/edit-user/{{ user.id }}">Edit</a>
   <a class="btn btn-danger" href="/delete-user/{{ user.id }}">Delete</a>
 </div>
+<div>
+  {% if user.posts %}
+  <h2>Posts</h2>
+  <ul>
+    {% for post in user.posts %}
+    <li>
+      <a href="/post/{{ post.id }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <br>
+  <a href="/add-post/{{ user.id }}" class="btn btn-primary">Add Post</a>
+</div>
 {% endblock %}
