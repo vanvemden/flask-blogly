@@ -1,0 +1,16 @@
+{% extends 'base.jinja' %}
+
+{% block page_title %}Users{% endblock %}
+
+{% block title %}Users{% endblock %}
+
+{% block content %}
+<ul>
+  {% for user in users %}
+  <li><a href="/user/{{ user.id }}">{{ user.first_name }} {{ user.last_name }}</a></li>
+  {% endfor %}
+</ul>
+<form class="hidden" action="/add-user">
+  <button class="btn btn-primary">Add user</button>
+</form>
+{% endblock %}

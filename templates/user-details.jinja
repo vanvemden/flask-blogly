@@ -1,0 +1,16 @@
+{% extends 'base.jinja' %}
+
+{% block page_title %}User Detail{% endblock %}
+
+{% block title %}User Detail{% endblock %}
+
+{% block content %}
+<div>
+  {% if user.image_url %}
+    <img src="{{ user.image_url }}" />
+  {% endif %}
+  <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+  <a class="btn btn-primary" href="/edit-user/{{ user.id }}">Edit</a>
+  <a class="btn btn-danger" href="/delete-user/{{ user.id }}">Delete</a>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.jinja' %}
+
+{% block page_title %}Add User{% endblock %}
+
+{% block title %}Add User{% endblock %}
+
+{% block content %}
+<form action='/add-user' method="POST">
+  <label>First name
+    <input type="text" name="first_name" value="{{ user.first_name }}" required>
+  </label>
+  <label>Last name
+    <input type="text" name="last_name" value="{{ user.last_name }}" required>
+  </label>
+  <label>Image URL
+    <input type="url" name="image_url" value="{{ user.image_url }}">
+  </label>
+  <button class="btn btn-success">Add</button>
+</form>
+{% endblock %}
